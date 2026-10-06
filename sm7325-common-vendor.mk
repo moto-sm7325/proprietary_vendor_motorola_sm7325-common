@@ -6,15 +6,20 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/motorola/sm7325-common
 
 PRODUCT_COPY_FILES += \
+    vendor/motorola/sm7325-common/proprietary/product/etc/default-permissions/default-permissions-faceunlock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-faceunlock.xml \
     vendor/motorola/sm7325-common/proprietary/product/etc/permissions/UimGba.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimGba.xml \
     vendor/motorola/sm7325-common/proprietary/product/etc/permissions/UimGbaManager.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimGbaManager.xml \
     vendor/motorola/sm7325-common/proprietary/product/etc/permissions/UimService.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimService.xml \
+    vendor/motorola/sm7325-common/proprietary/product/etc/permissions/com.motorola.faceunlock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.motorola.faceunlock.xml \
+    vendor/motorola/sm7325-common/proprietary/product/etc/permissions/privapp-permissions-com.motorola.faceunlock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.motorola.faceunlock.xml \
+    vendor/motorola/sm7325-common/proprietary/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.faceunlock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hiddenapi-whitelist-com.motorola.faceunlock.xml \
     vendor/motorola/sm7325-common/proprietary/system/etc/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
     vendor/motorola/sm7325-common/proprietary/system/etc/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
+    vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/moto-settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/moto-settings.xml \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/moto-telephony.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/moto-telephony.xml \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
     vendor/motorola/sm7325-common/proprietary/system_ext/etc/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_libpermissions.xml \
@@ -500,6 +505,7 @@ PRODUCT_PACKAGES += \
     libminkdescriptor \
     libminksocket \
     libmotext_inf \
+    libmpbase_vendor \
     libnetmgr_common \
     libnetmgr_nr_fusion \
     libnetmgr_rmnet_ext \
@@ -711,6 +717,10 @@ PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libvpp_ais_networks_so \
     vendor_lib_rfsa_adsp_libvpt_action_recognition_so \
     vendor_lib_rfsa_adsp_libworker_pool_so \
+    libarcsoft-lib \
+    libarcsoft_faceid \
+    libarcsoftbase \
+    libmpbase \
     com.qualcomm.qti.ant@1.0 \
     libmmosal \
     libmmparser_lite \
@@ -736,10 +746,12 @@ PRODUCT_PACKAGES += \
     IWlanService \
     TimeService \
     uimgbaservice \
+    MotoFaceUnlockArcSoft \
     ImsRcsService \
     PowerOffAlarm \
     QtiTelephony \
     QtiTelephonyService \
+    MotorolaSettingsProvider \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
@@ -749,6 +761,8 @@ PRODUCT_PACKAGES += \
     uimservicelibrary \
     com.qti.dpmframework \
     dpmapi \
+    moto-core_services \
+    moto-settings \
     moto-telephony \
     qcrilhook \
     vendor.qti.hardware.alarm-V1.0-java \
